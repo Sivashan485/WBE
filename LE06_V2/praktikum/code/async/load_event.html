@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Event Demo</title>
+	<script>
+	
+window.onload = () => {
+
+	let bibimg = document.querySelector('img')
+	bibimg.src = "https://www.zhaw.ch/storage/_processed_/d/5/csm_102_ebook-regal_287ccf6492.webp"
+
+	bibimg.addEventListener('load', function() {
+		alert("Image loaded")
+	})
+
+	let timestamp = Date.now() + 3000
+	while (Date.now() < timestamp) {}
+	
+}
+	
+	</script>
+</head>
+<body>
+	<div>
+		<img src="" alt="Hochschulbibliothek in Winterthur">
+	</div>
+</body>
+</html>

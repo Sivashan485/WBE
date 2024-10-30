@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de-CH">
+  <head>
+    <meta charset="utf-8" />
+    <title>Connect4 - Canvas</title>
+    <style>
+      canvas {
+        border: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="connect4" width="560" height="480"></canvas>
+    <script>
+      function draw() {
+        const canvas = document.getElementById("connect4");
+        if (canvas.getContext) {
+          const ctx = canvas.getContext("2d");
+          
+          ctx.beginPath();
+          for (let i=1; i<=5; i++) {
+            ctx.moveTo(0, i*80);
+            ctx.lineTo(560, i*80);
+          }
+          for (let i=1; i<=6; i++) {
+            ctx.moveTo(i*80, 0);
+            ctx.lineTo(i*80, 480);
+          }          
+          ctx.stroke();
+          
+          ctx.fillStyle = "blue";
+          ctx.beginPath();
+          ctx.arc(440, 440, 36, 0, Math.PI * 2, true);
+          ctx.fill();
+          
+          ctx.fillStyle = "red";
+          ctx.beginPath();
+          ctx.arc(120, 40, 36, 0, Math.PI * 2, true);
+          ctx.fill();
+
+          
+        }
+
+      }
+      window.addEventListener("load", draw);
+    </script>
+  </body>
+</html>
