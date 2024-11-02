@@ -1,0 +1,26 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+    implementation 'org.junit.platform:junit-platform-engine:1.9.0'
+    implementation 'org.junit.platform:junit-platform-launcher:1.9.0'
+}
+
+application {
+    mainClass = 'ch.zhaw.ads.ExBox'
+}
+
+sourceSets {
+    main.java.srcDirs = ['src']
+    test.java.srcDirs = ['src']
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
