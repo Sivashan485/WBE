@@ -1,13 +1,3 @@
-const ROWS = 6;
-const COLS = 7;
-
-const RED_PIECE = 'piece red';
-const BLUE_PIECE = 'piece blue';
-const PIECE = 'piece';
-let state = Array(6).fill('').map(el => Array(7).fill(''));
-
-
-
 function updateBoard() {
   const board = document.querySelector('.board');
   const fields = board.querySelectorAll('.field');
